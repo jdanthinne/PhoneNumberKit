@@ -8,7 +8,7 @@ let package = Package(
         .library(name: "PhoneNumberKit", targets: ["PhoneNumberKit"])
     ],
     targets: [
-        .target(name: "PhoneNumberKit", path: "PhoneNumberKit", exclude: []),
+        .target(name: "PhoneNumberKit", path: "PhoneNumberKit", exclude: [], linkerSettings: [.linkedFramework("CoreTelephony")]),
         .testTarget(name: "PhoneNumberKitTests", dependencies: ["PhoneNumberKit"], path: "PhoneNumberKitTests")
     ]
 )
